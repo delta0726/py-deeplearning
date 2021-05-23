@@ -29,6 +29,7 @@
 
 # ライブラリ
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 
 from pathlib import Path
@@ -36,13 +37,13 @@ from pathlib import Path
 
 # データ取り込み
 path = Path("book/tf2_handbook/csv/negaposi.csv")
-data = np.loadtxt(fname=path, dtype='int', delimiter=',', skiprows=1)
+data = pd.read_csv(path)
 
 # データ取得
 # --- x: 特徴量
 # --- y: ラベル(1 or -1)
-x = data[:, 0:2]
-t = data[:, 2]
+x = data.iloc[:, 0:2].to_numpy()
+t = data.iloc[:, 2].to_numpy()
 
 # 散布図の作成
 # --- ラベル種別で色付け（二値分類）
@@ -81,11 +82,15 @@ def learn_weight(x, t):
        Returns:
          (int)更新後のw(重み)
     """
-    # 乱数シード
+
+    # ウエイト抽出
+    # --- 乱数シードを設定
+    # --- 2つ抽出
     np.random.seed(seed=1)
+    w = np.random.rand(2)
 
     # パラメータ設定
-    w = np.random.rand(2)
+    # --- エポック数()
     epochs = 5
     count = 0
 
@@ -106,6 +111,8 @@ def learn_weight(x, t):
 # 4 パーセプトロンによる二値分類の実行 ----------------------------------------------------------
 
 # 学習
+# --- x: 特徴量
+# --- y: ラベル(1 or -1)
 w = learn_weight(x, t)
 
 
