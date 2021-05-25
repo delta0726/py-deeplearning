@@ -1,7 +1,7 @@
 # ******************************************************************************
 # Title     : Pythonディープラーニングシステム実装法
 # Chapter   : 1 Deep Learningによる画像分類の基礎
-# Theme     : FunctionalAPIによる実装
+# Theme     : 1-4-2 FunctionalAPIによる実装
 # Created by: Owner
 # Created on: 2021/5/24
 # Page      : P15 - P17

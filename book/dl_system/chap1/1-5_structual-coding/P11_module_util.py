@@ -1,8 +1,8 @@
 # ******************************************************************************
 # Title       : Pythonディープラーニングシステム実装法
 # Chapter     : 1 Deep Learningによる画像分類の基礎
-# Theme       : Sequentialモデルによる実装
-# Module      : P10_model_util.py
+# Theme       : 1-5 Sequentialモデルによる実装
+# Module      : P11_model_util.py
 # Description : モデル構築に関する処理をまとめたユーティリティプログラム
 # Created on  : 2021/5/24
 # Page        : P22 - P23 / P34 - P35
