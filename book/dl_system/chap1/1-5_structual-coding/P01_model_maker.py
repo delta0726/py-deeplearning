@@ -2,7 +2,7 @@
 # Title       : Pythonディープラーニングシステム実装法
 # Chapter     : 1 Deep Learningによる画像分類の基礎
 # Theme       : 1-5 Sequentialモデルによる実装
-# Module      : P01_module_maker.py
+# Module      : P01_model_maker.py
 # Description : モデル構築を行うプログラム
 # Created on  : 2021/5/24
 # Page        : P22 - P23
@@ -10,7 +10,7 @@
 
 
 import P10_util as util
-import P11_module_util as mutil
+import P11_model_util as mutil
 from tensorflow.keras.layers import Flatten, Input
 from tensorflow.keras.models import Model
 from tensorflow.keras.optimizers import Adam
