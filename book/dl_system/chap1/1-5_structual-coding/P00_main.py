@@ -14,7 +14,7 @@ import os
 import sys
 
 # カレントディレクトリの指定
-sys.path.append(os.path.join(os.getcwd(), os.path.join("book", "dl_system", "chap1", "1-5")))
+sys.path.append(os.path.join(os.getcwd(), os.path.join("book", "dl_system", "chap1", "1-5_structual-coding")))
 
 from P01_module_maker import ModelMaker
 
