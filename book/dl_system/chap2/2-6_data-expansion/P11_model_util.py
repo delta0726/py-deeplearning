@@ -13,7 +13,7 @@ from tensorflow.keras.layers import Conv2D, Dense, MaxPooling2D
 from tensorflow.keras.utils import plot_model
 
 
-# 関数定義 : add_conv_pool_layers
+# 関数定義 : add_conv_pool_layers()
 # --- 畳み込み層・プーリング層を追加する関数
 def add_conv_pool_layers(x, filters, kernel_size, pool_size, activation='relu'):
     x = Conv2D(filters, kernel_size, padding='same', activation=activation)(x)

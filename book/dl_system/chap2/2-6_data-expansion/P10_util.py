@@ -74,7 +74,7 @@ def make_generator(src_dir, valid_rate, input_size, batch_size):
 
     # ラッピング
     # --- 訓練データジェネレータ
-    trans_ds = Dataset.from_generator(
+    train_ds = Dataset.from_generator(
         lambda: train_generator,
         output_types=(tf.float32, tf.float32),
         output_shapes=(
@@ -95,10 +95,10 @@ def make_generator(src_dir, valid_rate, input_size, batch_size):
     )
 
     # 各Datasetを無限に繰り返す設定
-    trans_ds = trans_ds.repeat()
-    trans_ds = trans_ds.repeat()
+    train_ds = train_ds.repeat()
+    valid_ds = valid_ds.repeat()
 
-    return trans_ds, train_generator.n, valid_ds, valid_generator.n
+    return train_ds, train_generator.n, valid_ds, valid_generator.n
 
 
 # 関数定義 : plot()
@@ -125,7 +125,7 @@ def plot(history, filename):
     # --- 損失
     # --- 正解率
     add_subplot(2, 1, 1, xdata, history['loss'], history['val_loss'], (0, 5), 'loss')
-    add_subplot(2, 1, 1, xdata, history['loss'], history['accuracy'], (0, 5), 'loss')
+    add_subplot(2, 1, 2, xdata, history['accuracy'], history['val_accuracy'], (0, 1), 'accuracy')
 
     # 保存
     plt.savefig(filename)

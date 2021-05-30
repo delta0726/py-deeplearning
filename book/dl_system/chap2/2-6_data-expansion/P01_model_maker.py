@@ -51,13 +51,11 @@ class ModelMaker:
         x = Flatten()(x)
 
         # 全結合層の定義
-        for dim in self.dense_dims[:1]:
+        for dim in self.dense_dims[:-1]:
             x = mutil.add_dense_layer(x, dim)
 
         # 出力層の定義
-        x = mutil.add_dense_layer(
-            x, self.dense_dims[-1], activation='softmax'
-        )
+        x = mutil.add_dense_layer(x, self.dense_dims[-1], activation='softmax')
 
         # モデル全体の入出力を定義
         model = Model(input_x, x)
@@ -108,3 +106,7 @@ class ModelMaker:
 
         # 訓練状況を保存
         util.plot(history, self.hist_file)
+
+        # 損失量の表示
+        # --- 最終エポックの検証用データにおける損失
+        print('val_loss: %f' % history['val_loss'][-1])
