@@ -19,7 +19,7 @@ import P11_model_util as mutil
 
 class ModelMaker:
     def __init__(self, src_dir, dst_dir, est_file, info_file, graph_file, hist_file, input_size, filters,
-                 kernel_size, pool_size, dens_dims, lr, batch_size, reuse_count, epochs, valid_rate):
+                 kernel_size, pool_size, dense_dims, lr, batch_size, reuse_count, epochs, valid_rate):
 
         self.src_dir = src_dir
         self.dst_dir = dst_dir
@@ -31,7 +31,7 @@ class ModelMaker:
         self.filters = filters
         self.kernel_size = kernel_size
         self.pool_size = pool_size
-        self.dens_dims = dens_dims
+        self.dense_dims = dense_dims
         self.lr = lr
         self.batch_size = batch_size
         self.reuse_count = reuse_count
@@ -51,12 +51,12 @@ class ModelMaker:
         x = Flatten()(x)
 
         # 全結合層の定義
-        for dim in self.dens_dims[:1]:
+        for dim in self.dense_dims[:1]:
             x = mutil.add_dense_layer(x, dim)
 
         # 出力層の定義
         x = mutil.add_dense_layer(
-            x, self.dens_dims[-1], activation='softmax'
+            x, self.dense_dims[-1], activation='softmax'
         )
 
         # モデル全体の入出力を定義

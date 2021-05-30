@@ -23,6 +23,7 @@ from P01_model_maker import ModelMaker
 
 
 # パラメータ設定
+# --- REUSE_CNTを追加
 SRC_DIR = 'D00_dataset/training'
 DST_DIR = 'D01_estimator'
 EST_FILE = os.path.join(DST_DIR, 'estimator.h5')
@@ -59,7 +60,7 @@ maker = ModelMaker(
     filters=FILTERS,
     kernel_size=KERNEL_SIZE,
     pool_size=POOL_SIZE,
-    dens_dims=DENSE_DIMS,
+    dense_dims=DENSE_DIMS,
     lr=LR,
     batch_size=BATCH_SIZE,
     reuse_count=REUSE_CNT,
