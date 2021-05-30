@@ -3,7 +3,7 @@
 # Chapter     : 2 Deep Learningによる画像分類の応用
 # Theme       : 2-4 画像分類ニューラルネットワークの実装
 # Module      : P01_module_maker.py
-# Description : 起動スクリプト
+# Description : モデルのメイン処理（定義/実行/保存）
 # Created on  : 2021/5/29
 # Page        : P74 - P79
 # ******************************************************************************
