@@ -14,7 +14,7 @@ import sys
 # パス操作
 # --- カレントディレクトリの指定
 # --- システムパスの追加
-cd = os.path.join(os.getcwd(), os.path.join("book", "dl_system", "chap2", "2-4_base"))
+cd = os.path.join(os.getcwd(), os.path.join("book", "dl_system", "chap2", "2-04_base"))
 os.chdir(cd)
 sys.path.append(cd)
 
