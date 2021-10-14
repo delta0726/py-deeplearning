@@ -32,18 +32,19 @@
 
 # ライブラリ
 import os
-import numpy as np
-import matplotlib.pyplot as plt
-import tensorflow as tf
-
 from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow as tf
 
 
 # パス指定
-path = Path("book/tf2_handbook/csv/sales.csv")
+path = Path("csv/sales.csv")
 
 # データ取り込み
 # --- Numpyのloadtxt()を用いて読み込み
+# --- numpy.ndarrayオブジェクトとして読込まれる
 data = np.loadtxt(fname=path, dtype='int', delimiter=',', skiprows=1)
 
 # データ分割
@@ -53,7 +54,7 @@ train_x = data[:, 0]
 train_y = data[:, 1]
 
 # プロット作成
-# --- 第3引数はプロットする記号
+# --- 第3引数はプロットする記号（Markers）
 # --- https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.plot.html
 plt.plot(train_x, train_y, 'o')
 plt.show()
