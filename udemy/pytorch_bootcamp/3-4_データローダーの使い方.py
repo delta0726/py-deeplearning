@@ -146,8 +146,15 @@ print(n_iterations)
 # ＜ポイント＞
 # - エポックごとにデータを取り出して学習する
 
-#epoch = 1
-#i, data = trainloader.data
+# ＜参考＞
+# PytorchでDataLoaderからデータを取り出す
+# https://tzmi.hatenablog.com/entry/2020/03/01/202349
+
+
+# デバッグ用
+# epoch = 1
+# temp = trainloader.__iter__()
+# inputs, labels = temp.next()
 
 for epoch in range(epochs):
     for i, data in enumerate(trainloader):
